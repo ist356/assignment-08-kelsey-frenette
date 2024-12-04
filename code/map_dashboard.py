@@ -16,6 +16,7 @@ VMAX = 5000                 # max value for color scale
 cuse_map = folium.Map(location=CUSE, zoom_start=ZOOM)
 df = pd.read_csv('./cache/top_locations_mappable.csv')
 geodf = gpd.GeoDataFrame(df, geometry=gpd.points_from_xy(df.lon, df.lat))
-geodf.explore(m=cuse_map, column='amount',cmap='YlOrRd',legend=True)
-
+geodf.explore(m=cuse_map, marker_type='circle', vmin=VMIN, vmax=VMAX,
+              marker_kwds={"radius": 10, "fill": True},
+              column='amount', cmap='magma', legend=True)
 sf.folium_static(cuse_map)
