@@ -27,10 +27,20 @@ def top_locations_mappable(violations_df : pd.DataFrame, threshold=1000) -> pd.D
     top_loc_dedupe_df = top_loc_dedupe_df.rename(columns={'amount_x': 'amount'})
     return top_loc_dedupe_df
 
-
-def tickets_in_top_locations(violations_df, threshold)
+def tickets_in_top_locations(violations_df : pd.DataFrame, threshold=1000) -> pd.DataFrame:
+    '''
+    Return a dataframe of the parking tickets that 
+    were issued in the top locations.  
+    This dataframe is keyed on ticket number 
+    and has the same columns as the original dataframe.  
+    It should just be a subset of the original dataframe 
+    where the location one of the top locations.  
+    There should be 8,109 rows in this dataframe.
+    '''
+    top = top_locations(violations_df, threshold)
     del top['amount']
-    combined = pd.merge(top, violations_df, left_on='location', right_on='location')
+    combined = pd.merge(top, violations_df, left_on='location', 
+                        right_on='location')
     return combined
 
 if __name__ == '__main__':
