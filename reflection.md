@@ -23,3 +23,4 @@ Examples:
 **Best Reflection** "I learned when to use while vs for loops. While loops are for sentiel-controlled values (waiting for a condition to occur), vs for loops are for iterating over collections of fixed values."
 
 `--- Reflection Below This Line ---`
+This assignment helped me better understand the ETL process and interactive data visualization by learning how to aggregate and filter data to focus on relevant areas. It look me a few tries to understand scaling circle markers and what would be a good size. I had to go back multiple times to edit my code in order to improve layout responsiveness and adjust using advanced features. In the future, i want to enhance my debugging skills in order to improve the visualization process.
