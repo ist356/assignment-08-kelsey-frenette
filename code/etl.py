@@ -2,7 +2,7 @@ import pandas as pd
 import streamlit as st 
 
 
-def top_locations(violations_df : pd.DataFrame, threshold=1000) -> pd.DataFrame:
+def top_locations(violations_df : pd.DataFrame, threshold=1000) -> pd.DataFrame: 
     '''
     Return a dataframe of the locations of parking tickets with $1,000 or more in total 
     aggregate violation amounts.  
@@ -18,7 +18,7 @@ def top_locations(violations_df : pd.DataFrame, threshold=1000) -> pd.DataFrame:
     return top_df
 
 
-def top_locations_mappable(violations_df : pd.DataFrame, threshold=1000) -> pd.DataFrame:
+def top_locations_mappable(violations_df : pd.DataFrame, threshold=1000) -> pd.DataFrame: 
     top_df = top_locations(violations_df, threshold)
     combined = pd.merge(top_df, violations_df, left_on='location', 
                         right_on='location')
